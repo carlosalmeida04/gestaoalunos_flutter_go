@@ -1,4 +1,4 @@
-import "package:fluent_ui/fluent_ui.dart";
+import "package:flutter/material.dart";
 
 void main() => runApp(App());
 
@@ -7,6 +7,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FluentApp(title: "Testes", home: Text("OLa!"));
+    return MaterialApp(
+      theme: ThemeData(
+          useMaterial3: true,
+          iconTheme: const IconThemeData(color: Colors.blue, size: 100)),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Gestão de Alunos"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+          backgroundColor: Colors.black,
+        ),
+      ),
+    );
   }
 }
